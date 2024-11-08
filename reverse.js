@@ -13,4 +13,21 @@ function reverse(args) {
   return arr;
 }
 
-console.log(reverse(args));
+function pigLatin(args) {
+  let firstLetter = "";
+  const arr = [];
+  for (let word of args) {
+    firstLetter = word[0];
+    word += firstLetter + `ay`;
+    if (word.length == 1) {
+      arr.push(word);
+    } else {
+      arr.push(word.slice(1));
+    }
+  }
+  return arr.join(" ");
+}
+
+console.log(pigLatin(args));
+
+//pigLatin(args);
